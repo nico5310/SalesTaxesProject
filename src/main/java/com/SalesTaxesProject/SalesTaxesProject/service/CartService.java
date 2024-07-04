@@ -16,17 +16,16 @@ public class CartService {
     private double productPriceWithTaxes = 0;
 
     public void displayCartSelection(Cart cart) {
-        if (!cart.getProducts().isEmpty()) {
-            displayProductPriceWithTaxes(cart);
-            this.totalCartAmount = calculateCartPrice(cart);
-            this.totalTaxesCart = this.totalCartAmountWithTaxes - this.totalCartAmount;
-            displayTaxesWithTotalCartAmount();
-            this.totalCartAmountWithTaxes = 0;
-        } else {
-            System.out.println("This cart is empty");
-        }
+            if (!cart.getProducts().isEmpty()) {
+                displayProductPriceWithTaxes(cart);
+                this.totalCartAmount = calculateCartPrice(cart);
+                this.totalTaxesCart = this.totalCartAmountWithTaxes - this.totalCartAmount;
+                displayTaxesWithTotalCartAmount();
+                this.totalCartAmountWithTaxes = 0;
+            } else {
+                System.out.println("This cart is empty");
+            }
     }
-
 
     private void displayProductPriceWithTaxes(Cart cart) {
         for (Product product : cart.getProducts()) {
