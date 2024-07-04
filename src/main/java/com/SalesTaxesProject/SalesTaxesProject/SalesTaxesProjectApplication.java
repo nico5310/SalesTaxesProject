@@ -1,6 +1,6 @@
 package com.SalesTaxesProject.SalesTaxesProject;
 
-import com.SalesTaxesProject.SalesTaxesProject.service.InterfaceService;
+import com.SalesTaxesProject.SalesTaxesProject.service.MenuSelectorService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -12,7 +12,7 @@ public class SalesTaxesProjectApplication {
 
     public static void main(String[] args) throws IOException {
         SpringApplication.run(SalesTaxesProjectApplication.class, args);
-        InterfaceService.loadInterface();
+        MenuSelectorService.loadingMenuSelector();
     }
 
 }

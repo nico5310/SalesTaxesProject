@@ -19,11 +19,16 @@ public class Database {
     private List<Cart> carts;
 
     @PostConstruct
-    public void initDatabase() throws IOException {
+    public void initDatabase()  {
 
         Database database = new Database();
 
-        byte[] jsonData = Files.readAllBytes(Paths.get("src/main/resources/data.json"));
+        byte[] jsonData = null;
+        try {
+            jsonData = Files.readAllBytes(Paths.get("src/main/resources/data.json"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
@@ -41,15 +46,15 @@ public class Database {
         return this.carts;
     }
 
-    public Cart getFirstBasket() {
+    public Cart getFirstCart() {
         return this.carts.get(0);
     }
 
-    public Cart getSecondBasket() {
+    public Cart getSecondCart() {
         return this.carts.get(1);
     }
 
-    public Cart getThirdBasket() {
+    public Cart getThirdCart() {
         return this.carts.get(2);
     }
 }

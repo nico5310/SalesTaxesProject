@@ -14,7 +14,7 @@ import static org.mockito.Mockito.verify;
 @ExtendWith(MockitoExtension.class)
 public class InterfaceServiceTest {
 
-    private static InterfaceService interfaceService = new InterfaceService();
+    private static MenuSelectorService menuSelectorService = new MenuSelectorService();
     private String messageSelection;
 
     Database database;
@@ -33,7 +33,7 @@ public class InterfaceServiceTest {
         System.setOut(mockedPrintStream);
 
         //WHEN
-        interfaceService.loadMenu();
+        menuSelectorService.loadMenu();
 
         //THEN
         verify(mockedPrintStream).println(messageSelection);
