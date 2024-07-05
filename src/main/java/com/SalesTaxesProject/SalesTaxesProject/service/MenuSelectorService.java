@@ -12,13 +12,7 @@ public class MenuSelectorService {
     private static InputReaderUtil inputReaderUtil = new InputReaderUtil();
     private static UserActionFactory userActionFactory = new UserActionFactory();
 
-
     private static String messageSelection = "Please enter your cart number:" + "\n" + "1 First Cart / " + "2 Second Cart / " + "3 Third Cart / " + "0 Exit";
-
-    public static void setContinueApp(boolean continueApp) {
-        MenuSelectorService.continueApp = continueApp;
-    }
-
     private static boolean continueApp = true;
 
     public static void loadingMenuSelector() {
@@ -32,6 +26,10 @@ public class MenuSelectorService {
 
     public static void loadMenu() {
         System.out.println(messageSelection);
+    }
+
+    public static void setContinueApp(boolean continueApp) {
+        MenuSelectorService.continueApp = continueApp;
     }
 
 }

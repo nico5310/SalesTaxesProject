@@ -16,8 +16,7 @@ public class CartService {
     private double productPriceWithTaxes = 0;
 
     public void displayCartSelection(Cart cart) {
-        try {
-            if (!cart.getProducts().isEmpty()) {
+            try {if (!cart.getProducts().isEmpty()) {
                 displayProductPriceWithTaxes(cart);
                 this.totalCartAmount = calculateCartPrice(cart);
                 this.totalTaxesCart = this.totalCartAmountWithTaxes - this.totalCartAmount;
@@ -25,12 +24,10 @@ public class CartService {
                 this.totalCartAmountWithTaxes = 0;
             } else {
                 System.out.println("This cart is empty");
-            }
-        } catch (Exception e) {
+            }} catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
-
 
     private void displayProductPriceWithTaxes(Cart cart) {
         for (Product product : cart.getProducts()) {

@@ -1,6 +1,6 @@
 package com.SalesTaxesProject.SalesTaxesProject;
 
-import com.SalesTaxesProject.SalesTaxesProject.model.*;
+import com.SalesTaxesProject.SalesTaxesProject.Cart.*;
 
 public class UserActionFactory {
 
